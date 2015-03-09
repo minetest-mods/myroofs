@@ -45,12 +45,46 @@ local ocorner_cbox = {
 	}
 }
 
+local icorner_cbox_long = {
+	type = "fixed",
+	fixed = {
+		{-0.5, -0.5, -1.5, -0.25, 0.5, 0.5},
+		{-0.5, -0.5, 0.25, 1.5, 0.5, 0.5},
+		{-0.5, -0.5, 0, 1.5, 0.375, 0.5},
+		{-0.5, -0.5, -1.5, 0, 0.375, 0.5},
+		{-0.5, -0.5, -1.5, 0.25, 0.25, 0.5},
+		{-0.5, -0.5, -1.5, 0.5, 0.125, 0.5},
+		{-0.5, -0.5, -1.5, 0.75, 0, 0.5},
+		{-0.5, -0.5, -1.5, 1, -0.125, 0.5},
+		{-0.5, -0.5, -1.5, 1.25, -0.25, 0.5},
+		{-0.5, -0.5, -1.5, 1.5, -0.375, 0.5},
+		{-0.5, -0.5, -0.25, 1.5, 0.25, 0.5},
+		{-0.5, -0.5, -0.5, 1.5, 0.125, 0.5}, 
+		{-0.5, -0.5, -0.75, 1.5, 0, 0.5},
+		{-0.5, -0.5, -1, 1.5, -0.125, 0.5},
+		{-0.5, -0.5, -1.25, 1.5, -0.25, 0.5},
+	}
+}
+
+local ocorner_cbox_long = {
+	type = "fixed",
+	fixed = {
+		{-0.5, -0.5, 0.25, -0.25, 0.5, 0.5},
+		{-0.5, -0.5, 0, 0, 0.375, 0.5},
+		{-0.5, -0.5, -0.25, 0.25, 0.25, 0.5},
+		{-0.5, -0.5, -0.5, 0.5, 0.125, 0.5}, 
+		{-0.5, -0.5, -0.75, 0.75, 0, 0.5}, 
+		{-0.5, -0.5, -1, 1, -0.125, 0.5}, 
+		{-0.5, -0.5, -1.25, 1.25, -0.25, 0.5}, 
+		{-0.5, -0.5, -1.5, 1.5, -0.375, 0.5},
+	}
+}
 --Grey Asphalt Shingle
 minetest.register_node("myroofs:asphalt_shingle_grey", {
 	description = "Grey Asphalt Shingle",
 	drawtype = "mesh",
-	mesh = "slope_test_slope.obj",
-	tiles = {"myroofs_asphalt_shingle_grey_mesh.png"},
+	mesh = "twelve-twelve.obj",
+	tiles = {"myroofs_asphalt_shingle_grey.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -72,8 +106,8 @@ minetest.register_craft({
 minetest.register_node("myroofs:asphalt_shingle_grey_ocorner", {
 	description = "Grey Asphalt Shingle Outside Corner",
 	drawtype = "mesh",
-	mesh = "slope_test_ocorner.obj",
-	tiles = {"myroofs_asphalt_shingle_grey_mesh_ocorner.png"},
+	mesh = "twelve-twelve-oc.obj",
+	tiles = {"myroofs_asphalt_shingle_grey.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -95,8 +129,8 @@ minetest.register_craft({
 minetest.register_node("myroofs:asphalt_shingle_grey_icorner", {
 	description = "Grey Asphalt Shingle Inside Corner",
 	drawtype = "mesh",
-	mesh = "slope_test_icorner.obj",
-	tiles = {"myroofs_asphalt_shingle_grey_mesh_icorner.png"},
+	mesh = "twelve-twelve-ic.obj",
+	tiles = {"myroofs_asphalt_shingle_grey.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -107,7 +141,7 @@ minetest.register_node("myroofs:asphalt_shingle_grey_icorner", {
 })
 --Craft
 minetest.register_craft({
-	output = "myroofs:asphalt_shingle_grey_ocorner 8",
+	output = "myroofs:asphalt_shingle_grey_icorner 8",
 	recipe = {
 		{"myroofs:asphalt_shingle_grey", "myroofs:asphalt_shingle_grey","myroofs:asphalt_shingle_grey"},
 		{"myroofs:asphalt_shingle_grey", "myroofs:asphalt_shingle_grey","myroofs:asphalt_shingle_grey"},
@@ -119,8 +153,8 @@ minetest.register_craft({
 minetest.register_node("myroofs:asphalt_shingle_dark_grey", {
 	description = "Dark Grey Asphalt Shingle",
 	drawtype = "mesh",
-	mesh = "slope_test_slope.obj",
-	tiles = {"myroofs_asphalt_shingle_dark_grey_mesh.png"},
+	mesh = "twelve-twelve.obj",
+	tiles = {"myroofs_asphalt_shingle_dark_grey.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -142,8 +176,8 @@ minetest.register_craft({
 minetest.register_node("myroofs:asphalt_shingle_dark_grey_ocorner", {
 	description = "Dark Grey Asphalt Shingle Outside Corner",
 	drawtype = "mesh",
-	mesh = "slope_test_ocorner.obj",
-	tiles = {"myroofs_asphalt_shingle_dark_grey_mesh_ocorner.png"},
+	mesh = "twelve-twelve-oc.obj",
+	tiles = {"myroofs_asphalt_shingle_dark_grey.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -165,8 +199,8 @@ minetest.register_craft({
 minetest.register_node("myroofs:asphalt_shingle_dark_grey_icorner", {
 	description = "Dark Grey Asphalt Shingle Inside Corner",
 	drawtype = "mesh",
-	mesh = "slope_test_icorner.obj",
-	tiles = {"myroofs_asphalt_shingle_dark_grey_mesh_icorner.png"},
+	mesh = "twelve-twelve-ic.obj",
+	tiles = {"myroofs_asphalt_shingle_dark_grey.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -177,7 +211,7 @@ minetest.register_node("myroofs:asphalt_shingle_dark_grey_icorner", {
 })
 --Craft
 minetest.register_craft({
-	output = "myroofs:asphalt_shingle_grey_ocorner 8",
+	output = "myroofs:asphalt_shingle_grey_icorner 8",
 	recipe = {
 		{"myroofs:asphalt_shingle_dark_grey", "myroofs:asphalt_shingle_dark_grey","myroofs:asphalt_shingle_dark_grey"},
 		{"myroofs:asphalt_shingle_dark_grey", "myroofs:asphalt_shingle_dark_grey","myroofs:asphalt_shingle_dark_grey"},
@@ -189,8 +223,8 @@ minetest.register_craft({
 minetest.register_node("myroofs:asphalt_shingle_red", {
 	description = "Red Asphalt Shingle",
 	drawtype = "mesh",
-	mesh = "slope_test_slope.obj",
-	tiles = {"myroofs_asphalt_shingle_red_mesh.png"},
+	mesh = "twelve-twelve.obj",
+	tiles = {"myroofs_asphalt_shingle_red.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -212,8 +246,8 @@ minetest.register_craft({
 minetest.register_node("myroofs:asphalt_shingle_red_ocorner", {
 	description = "Red Asphalt Shingle Outside Corner",
 	drawtype = "mesh",
-	mesh = "slope_test_ocorner.obj",
-	tiles = {"myroofs_asphalt_shingle_red_mesh_ocorner.png"},
+	mesh = "twelve-twelve-oc.obj",
+	tiles = {"myroofs_asphalt_shingle_red.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -235,8 +269,8 @@ minetest.register_craft({
 minetest.register_node("myroofs:asphalt_shingle_red_icorner", {
 	description = "Red Asphalt Shingle Inside Corner",
 	drawtype = "mesh",
-	mesh = "slope_test_icorner.obj",
-	tiles = {"myroofs_asphalt_shingle_red_mesh_icorner.png"},
+	mesh = "twelve-twelve-ic.obj",
+	tiles = {"myroofs_asphalt_shingle_red.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -247,7 +281,7 @@ minetest.register_node("myroofs:asphalt_shingle_red_icorner", {
 })
 --Craft
 minetest.register_craft({
-	output = "myroofs:asphalt_shingle_red_ocorner 8",
+	output = "myroofs:asphalt_shingle_red_icorner 8",
 	recipe = {
 		{"myroofs:asphalt_shingle_red", "myroofs:asphalt_shingle_red","myroofs:asphalt_shingle_red"},
 		{"myroofs:asphalt_shingle_red", "myroofs:asphalt_shingle_red","myroofs:asphalt_shingle_red"},
@@ -259,8 +293,8 @@ minetest.register_craft({
 minetest.register_node("myroofs:asphalt_shingle_green", {
 	description = "Green Asphalt Shingle",
 	drawtype = "mesh",
-	mesh = "slope_test_slope.obj",
-	tiles = {"myroofs_asphalt_shingle_green_mesh.png"},
+	mesh = "twelve-twelve.obj",
+	tiles = {"myroofs_asphalt_shingle_green.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -282,8 +316,8 @@ minetest.register_craft({
 minetest.register_node("myroofs:asphalt_shingle_green_ocorner", {
 	description = "Green Asphalt Shingle Outside Corner",
 	drawtype = "mesh",
-	mesh = "slope_test_ocorner.obj",
-	tiles = {"myroofs_asphalt_shingle_green_mesh_ocorner.png"},
+	mesh = "twelve-twelve-oc.obj",
+	tiles = {"myroofs_asphalt_shingle_green.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -305,8 +339,8 @@ minetest.register_craft({
 minetest.register_node("myroofs:asphalt_shingle_green_icorner", {
 	description = "Green Asphalt Shingle Inside Corner",
 	drawtype = "mesh",
-	mesh = "slope_test_icorner.obj",
-	tiles = {"myroofs_asphalt_shingle_green_mesh_icorner.png"},
+	mesh = "twelve-twelve-ic.obj",
+	tiles = {"myroofs_asphalt_shingle_green.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -317,7 +351,7 @@ minetest.register_node("myroofs:asphalt_shingle_green_icorner", {
 })
 --Craft
 minetest.register_craft({
-	output = "myroofs:asphalt_shingle_red_ocorner 8",
+	output = "myroofs:asphalt_shingle_red_icorner 8",
 	recipe = {
 		{"myroofs:asphalt_shingle_green", "myroofs:asphalt_shingle_green","myroofs:asphalt_shingle_green"},
 		{"myroofs:asphalt_shingle_green", "myroofs:asphalt_shingle_green","myroofs:asphalt_shingle_green"},
@@ -325,13 +359,14 @@ minetest.register_craft({
 	}
 })
 
-----------------------------------------------------------------------------------
+-- Long slopes ------------------------------------------------------------------------------
 
+--Grey Asphalt Shingle Long
 minetest.register_node("myroofs:asphalt_shingle_grey_long", {
 	description = "Grey Asphalt Shingle Long",
 	drawtype = "mesh",
-	mesh = "slope_test_slope_long.obj",
-	tiles = {"myroofs_asphalt_shingle_grey_long_mesh.png"},
+	mesh = "six-twelve_slope.obj",
+	tiles = {"myroofs_asphalt_shingle_grey.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -340,7 +375,7 @@ minetest.register_node("myroofs:asphalt_shingle_grey_long", {
 	collision_box = slope_cbox_long,
 	selection_box = slope_cbox_long
 })
---Craft
+--Grey Asphalt Shingle Long Craft
 minetest.register_craft({
 	output = "myroofs:asphalt_shingle_grey_long 1",
 	recipe = {
@@ -350,11 +385,60 @@ minetest.register_craft({
 	}
 })
 
+--Grey Asphalt Shingle Long Inside Corner
+minetest.register_node("myroofs:asphalt_shingle_grey_long_icorner", {
+	description = "Grey Asphalt Shingle Long Inside Corner",
+	drawtype = "mesh",
+	mesh = "six-twelve_slope-ic.obj",
+	tiles = {"myroofs_asphalt_shingle_grey.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
+	sounds = default.node_sound_wood_defaults(),
+	on_place = minetest.rotate_node,
+	collision_box = icorner_cbox_long,
+	selection_box = icorner_cbox_long
+})
+--Grey Asphalt Shingle Long Inside Corner Craft
+minetest.register_craft({
+	output = "myroofs:asphalt_shingle_grey_long_icorner 1",
+	recipe = {
+		{"", "myroofs:asphalt_shingle_grey",""},
+		{"myroofs:asphalt_shingle_grey", "","myroofs:asphalt_shingle_grey"},
+		{"", "",""},
+	}
+})
+
+--Grey Asphalt Shingle Long Inside Corner
+minetest.register_node("myroofs:asphalt_shingle_grey_long_ocorner", {
+	description = "Grey Asphalt Shingle Long Outside Corner",
+	drawtype = "mesh",
+	mesh = "six-twelve_slope-oc.obj",
+	tiles = {"myroofs_asphalt_shingle_grey.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
+	sounds = default.node_sound_wood_defaults(),
+	on_place = minetest.rotate_node,
+	collision_box = ocorner_cbox_long,
+	selection_box = ocorner_cbox_long
+})
+--Grey Asphalt Shingle Long Inside Corner Craft
+minetest.register_craft({
+	output = "myroofs:asphalt_shingle_grey_long_ocorner 1",
+	recipe = {
+		{"myroofs:asphalt_shingle_grey", "","myroofs:asphalt_shingle_grey"},
+		{"", "myroofs:asphalt_shingle_grey",""},
+		{"", "",""},
+	}
+})
+
+--Dark Grey Asphalt Shingle Long
 minetest.register_node("myroofs:asphalt_shingle_dark_grey_long", {
 	description = "Dark Grey Asphalt Shingle Long",
 	drawtype = "mesh",
-	mesh = "slope_test_slope_long.obj",
-	tiles = {"myroofs_asphalt_shingle_dark_grey_long_mesh.png"},
+	mesh = "six-twelve_slope.obj",
+	tiles = {"myroofs_asphalt_shingle_dark_grey.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -363,7 +447,7 @@ minetest.register_node("myroofs:asphalt_shingle_dark_grey_long", {
 	collision_box = slope_cbox_long,
 	selection_box = slope_cbox_long
 })
---Craft
+--Dark Grey Asphalt Shingle Long Craft
 minetest.register_craft({
 	output = "myroofs:asphalt_shingle_dark_grey_long 1",
 	recipe = {
@@ -373,11 +457,60 @@ minetest.register_craft({
 	}
 })
 
+--Dark Grey Asphalt Shingle Long Inside Corner
+minetest.register_node("myroofs:asphalt_shingle_dark_grey_long_icorner", {
+	description = "Dark Grey Asphalt Shingle Long Inside Corner",
+	drawtype = "mesh",
+	mesh = "six-twelve_slope-ic.obj",
+	tiles = {"myroofs_asphalt_shingle_dark_grey.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
+	sounds = default.node_sound_wood_defaults(),
+	on_place = minetest.rotate_node,
+	collision_box = icorner_cbox_long,
+	selection_box = icorner_cbox_long
+})
+--Dark Grey Asphalt Shingle Long Inside Corner Craft
+minetest.register_craft({
+	output = "myroofs:asphalt_shingle_dark_grey_long_icorner 1",
+	recipe = {
+		{"", "myroofs:asphalt_shingle_dark_grey",""},
+		{"myroofs:asphalt_shingle_dark_grey", "","myroofs:asphalt_shingle_dark_grey"},
+		{"", "",""},
+	}
+})
+
+--Dark Grey Asphalt Shingle Long Inside Corner
+minetest.register_node("myroofs:asphalt_shingle_dark_grey_long_ocorner", {
+	description = "Dark Grey Asphalt Shingle Long Outside Corner",
+	drawtype = "mesh",
+	mesh = "six-twelve_slope-oc.obj",
+	tiles = {"myroofs_asphalt_shingle_dark_grey.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
+	sounds = default.node_sound_wood_defaults(),
+	on_place = minetest.rotate_node,
+	collision_box = ocorner_cbox_long,
+	selection_box = ocorner_cbox_long
+})
+--Dark Grey Asphalt Shingle Long Inside Corner Craft
+minetest.register_craft({
+	output = "myroofs:asphalt_shingle_dark_grey_long_ocorner 1",
+	recipe = {
+		{"myroofs:asphalt_shingle_dark_grey", "","myroofs:asphalt_shingle_dark_grey"},
+		{"", "myroofs:asphalt_shingle_dark_grey",""},
+		{"", "",""},
+	}
+})
+
+--Red Asphalt Shingle Long
 minetest.register_node("myroofs:asphalt_shingle_red_long", {
 	description = "Red Asphalt Shingle Long",
 	drawtype = "mesh",
-	mesh = "slope_test_slope_long.obj",
-	tiles = {"myroofs_asphalt_shingle_red_long_mesh.png"},
+	mesh = "six-twelve_slope.obj",
+	tiles = {"myroofs_asphalt_shingle_red.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -386,7 +519,7 @@ minetest.register_node("myroofs:asphalt_shingle_red_long", {
 	collision_box = slope_cbox_long,
 	selection_box = slope_cbox_long
 })
---Craft
+--Red Asphalt Shingle Long Craft
 minetest.register_craft({
 	output = "myroofs:asphalt_shingle_red_long 1",
 	recipe = {
@@ -396,11 +529,60 @@ minetest.register_craft({
 	}
 })
 
+--Red Asphalt Shingle Long Inside Corner
+minetest.register_node("myroofs:asphalt_shingle_red_long_icorner", {
+	description = "Red Asphalt Shingle Long Inside Corner",
+	drawtype = "mesh",
+	mesh = "six-twelve_slope-ic.obj",
+	tiles = {"myroofs_asphalt_shingle_red.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
+	sounds = default.node_sound_wood_defaults(),
+	on_place = minetest.rotate_node,
+	collision_box = icorner_cbox_long,
+	selection_box = icorner_cbox_long
+})
+--Red Asphalt Shingle Long Inside Corner Craft
+minetest.register_craft({
+	output = "myroofs:asphalt_shingle_red_long_icorner 1",
+	recipe = {
+		{"", "myroofs:asphalt_shingle_red",""},
+		{"myroofs:asphalt_shingle_red", "","myroofs:asphalt_shingle_red"},
+		{"", "",""},
+	}
+})
+
+--Red Asphalt Shingle Long Inside Corner
+minetest.register_node("myroofs:asphalt_shingle_red_long_ocorner", {
+	description = "Red Asphalt Shingle Long Outside Corner",
+	drawtype = "mesh",
+	mesh = "six-twelve_slope-oc.obj",
+	tiles = {"myroofs_asphalt_shingle_red.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
+	sounds = default.node_sound_wood_defaults(),
+	on_place = minetest.rotate_node,
+	collision_box = ocorner_cbox_long,
+	selection_box = ocorner_cbox_long
+})
+--Red Asphalt Shingle Long Inside Corner Craft
+minetest.register_craft({
+	output = "myroofs:asphalt_shingle_red_long_ocorner 1",
+	recipe = {
+		{"myroofs:asphalt_shingle_red", "","myroofs:asphalt_shingle_red"},
+		{"", "myroofs:asphalt_shingle_red",""},
+		{"", "",""},
+	}
+})
+
+--Green Asphalt Shingle Long
 minetest.register_node("myroofs:asphalt_shingle_green_long", {
 	description = "Green Asphalt Shingle Long",
 	drawtype = "mesh",
-	mesh = "slope_test_slope_long.obj",
-	tiles = {"myroofs_asphalt_shingle_green_long_mesh.png"},
+	mesh = "six-twelve_slope.obj",
+	tiles = {"myroofs_asphalt_shingle_green.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -409,7 +591,7 @@ minetest.register_node("myroofs:asphalt_shingle_green_long", {
 	collision_box = slope_cbox_long,
 	selection_box = slope_cbox_long
 })
---Craft
+--Green Asphalt Shingle Long Craft
 minetest.register_craft({
 	output = "myroofs:asphalt_shingle_green_long 1",
 	recipe = {
@@ -419,11 +601,61 @@ minetest.register_craft({
 	}
 })
 
+--Green Asphalt Shingle Long Inside Corner
+minetest.register_node("myroofs:asphalt_shingle_green_long_icorner", {
+	description = "Green Asphalt Shingle Long Inside Corner",
+	drawtype = "mesh",
+	mesh = "six-twelve_slope-ic.obj",
+	tiles = {"myroofs_asphalt_shingle_green.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
+	sounds = default.node_sound_wood_defaults(),
+	on_place = minetest.rotate_node,
+	collision_box = icorner_cbox_long,
+	selection_box = icorner_cbox_long
+})
+--Green Asphalt Shingle Long Inside Corner Craft
+minetest.register_craft({
+	output = "myroofs:asphalt_shingle_green_long_icorner 1",
+	recipe = {
+		{"", "myroofs:asphalt_shingle_green",""},
+		{"myroofs:asphalt_shingle_green", "","myroofs:asphalt_shingle_green"},
+		{"", "",""},
+	}
+})
+
+--Green Asphalt Shingle Long Inside Corner
+minetest.register_node("myroofs:asphalt_shingle_green_long_ocorner", {
+	description = "Green Asphalt Shingle Long Outside Corner",
+	drawtype = "mesh",
+	mesh = "six-twelve_slope-oc.obj",
+	tiles = {"myroofs_asphalt_shingle_green.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
+	sounds = default.node_sound_wood_defaults(),
+	on_place = minetest.rotate_node,
+	collision_box = ocorner_cbox_long,
+	selection_box = ocorner_cbox_long
+})
+--Green Asphalt Shingle Long Inside Corner Craft
+minetest.register_craft({
+	output = "myroofs:asphalt_shingle_green_long_ocorner 1",
+	recipe = {
+		{"myroofs:asphalt_shingle_green", "","myroofs:asphalt_shingle_green"},
+		{"", "myroofs:asphalt_shingle_green",""},
+		{"", "",""},
+	}
+})
+
+
+--Grey Round Asphalt Shingle Long
 minetest.register_node("myroofs:asphalt_shingle_grey_round_long", {
 	description = "Grey Round Asphalt Shingle Long",
 	drawtype = "mesh",
-	mesh = "slope_test_slope_long.obj",
-	tiles = {"myroofs_asphalt_shingle_grey_round_long_mesh.png"},
+	mesh = "six-twelve_slope.obj",
+	tiles = {"myroofs_asphalt_shingle_grey_round.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -432,7 +664,7 @@ minetest.register_node("myroofs:asphalt_shingle_grey_round_long", {
 	collision_box = slope_cbox_long,
 	selection_box = slope_cbox_long
 })
---Craft
+--Grey Round Asphalt Shingle Long Craft
 minetest.register_craft({
 	output = "myroofs:asphalt_shingle_grey_round_long 1",
 	recipe = {
@@ -442,11 +674,60 @@ minetest.register_craft({
 	}
 })
 
+--Grey Round Asphalt Shingle Long Inside Corner
+minetest.register_node("myroofs:asphalt_shingle_grey_round_long_icorner", {
+	description = "Grey Round Asphalt Shingle Long Inside Corner",
+	drawtype = "mesh",
+	mesh = "six-twelve_slope-ic.obj",
+	tiles = {"myroofs_asphalt_shingle_grey_round.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
+	sounds = default.node_sound_wood_defaults(),
+	on_place = minetest.rotate_node,
+	collision_box = icorner_cbox_long,
+	selection_box = icorner_cbox_long
+})
+--Grey Round Asphalt Shingle Long Inside Corner Craft
+minetest.register_craft({
+	output = "myroofs:asphalt_shingle_grey_round_long_icorner 1",
+	recipe = {
+		{"", "myroofs:asphalt_shingle_grey",""},
+		{"myroofs:asphalt_shingle_grey", "","myroofs:asphalt_shingle_grey"},
+		{"", "",""},
+	}
+})
+
+--Grey Round Asphalt Shingle Long Inside Corner
+minetest.register_node("myroofs:asphalt_shingle_grey_round_long_ocorner", {
+	description = "Grey Round Asphalt Shingle Long Outside Corner",
+	drawtype = "mesh",
+	mesh = "six-twelve_slope-oc.obj",
+	tiles = {"myroofs_asphalt_shingle_grey_round.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
+	sounds = default.node_sound_wood_defaults(),
+	on_place = minetest.rotate_node,
+	collision_box = ocorner_cbox_long,
+	selection_box = ocorner_cbox_long
+})
+--Grey Round Asphalt Shingle Long Inside Corner Craft
+minetest.register_craft({
+	output = "myroofs:asphalt_shingle_grey_round_long_ocorner 1",
+	recipe = {
+		{"myroofs:asphalt_shingle_grey", "","myroofs:asphalt_shingle_grey"},
+		{"", "myroofs:asphalt_shingle_grey",""},
+		{"", "",""},
+	}
+})
+
+--Dark Grey Round Asphalt Shingle Long
 minetest.register_node("myroofs:asphalt_shingle_dark_grey_round_long", {
 	description = "Dark Grey Round Asphalt Shingle Long",
 	drawtype = "mesh",
-	mesh = "slope_test_slope_long.obj",
-	tiles = {"myroofs_asphalt_shingle_dark_grey_round_long_mesh.png"},
+	mesh = "six-twelve_slope.obj",
+	tiles = {"myroofs_asphalt_shingle_dark_grey_round.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
@@ -455,7 +736,7 @@ minetest.register_node("myroofs:asphalt_shingle_dark_grey_round_long", {
 	collision_box = slope_cbox_long,
 	selection_box = slope_cbox_long
 })
---Craft
+--Dark Grey Round Asphalt Shingle Long Craft
 minetest.register_craft({
 	output = "myroofs:asphalt_shingle_dark_grey_round_long 1",
 	recipe = {
@@ -465,4 +746,50 @@ minetest.register_craft({
 	}
 })
 
+--Dark Grey Round Asphalt Shingle Long Inside Corner
+minetest.register_node("myroofs:asphalt_shingle_dark_grey_round_long_icorner", {
+	description = "Dark Grey Round Asphalt Shingle Long Inside Corner",
+	drawtype = "mesh",
+	mesh = "six-twelve_slope-ic.obj",
+	tiles = {"myroofs_asphalt_shingle_dark_grey_round.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
+	sounds = default.node_sound_wood_defaults(),
+	on_place = minetest.rotate_node,
+	collision_box = icorner_cbox_long,
+	selection_box = icorner_cbox_long
+})
+--Dark Grey Round Asphalt Shingle Long Inside Corner Craft
+minetest.register_craft({
+	output = "myroofs:asphalt_shingle_dark_grey_round_long_icorner 1",
+	recipe = {
+		{"", "myroofs:asphalt_shingle_dark_grey_round",""},
+		{"myroofs:asphalt_shingle_dark_grey_round", "","myroofs:asphalt_shingle_dark_grey_round"},
+		{"", "",""},
+	}
+})
 
+--Dark Grey Round Asphalt Shingle Long Inside Corner
+minetest.register_node("myroofs:asphalt_shingle_dark_grey_round_long_ocorner", {
+	description = "Dark Grey Round Asphalt Shingle Long Outside Corner",
+	drawtype = "mesh",
+	mesh = "six-twelve_slope-oc.obj",
+	tiles = {"myroofs_asphalt_shingle_dark_grey_round.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
+	sounds = default.node_sound_wood_defaults(),
+	on_place = minetest.rotate_node,
+	collision_box = ocorner_cbox_long,
+	selection_box = ocorner_cbox_long
+})
+--Dark Grey Round Asphalt Shingle Long Inside Corner Craft
+minetest.register_craft({
+	output = "myroofs:asphalt_shingle_dark_grey_round_long_ocorner 1",
+	recipe = {
+		{"myroofs:asphalt_shingle_dark_grey_round", "","myroofs:asphalt_shingle_dark_grey_round"},
+		{"", "myroofs:asphalt_shingle_dark_grey_round",""},
+		{"", "",""},
+	}
+})
