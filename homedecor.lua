@@ -212,7 +212,7 @@ local homedecor_slope = { --desc, color, item
 for i in ipairs (homedecor_slope) do
 	local desc = homedecor_slope[i][1]
 	local color = homedecor_slope[i][2]
-	local img = homedecor_slope[i][3]
+	local item = homedecor_slope[i][3]
 
 --Slope
 minetest.register_craft({
@@ -252,7 +252,7 @@ local homedecor_lslope = { --desc, color, item
 for i in ipairs (homedecor_lslope) do
 	local desc = homedecor_lslope[i][1]
 	local color = homedecor_lslope[i][2]
-	local img = homedecor_lslope[i][3]
+	local item = homedecor_lslope[i][3]
 
 --Long Slope
 minetest.register_craft({
