@@ -80,206 +80,175 @@ local ocorner_cbox_long = {
 	}
 }
 
-local asphalt_slope = { --desc, color, img
-	{"Grey", "grey"},
-	{"Dark Grey", "dark_grey"},
-	{"Red", "red"},
-	{"Green", "green"},
---	{"Grey Round", "grey_round"},
---	{"Dark Grey Round", "dark_grey_round"},
+local straw_slope = { --desc, color, item
+	{"Straw", "straw", "farming:straw"},
+	{"Dark Straw", "straw_dark", "myroofs:straw_dark"},
+	{"Reet", "reet", "myroofs:reet"},
 }
-for i in ipairs (asphalt_slope) do
-	local desc = asphalt_slope[i][1]
-	local color = asphalt_slope[i][2]
-
-
+for i in ipairs (straw_slope) do
+	local desc = straw_slope[i][1]
+	local color = straw_slope[i][2]
+	local item = straw_slope[i][3]
 --Slope
-minetest.register_node("myroofs:asphalt_shingle_"..color, {
-	description = desc.." Asphalt Shingle",
+minetest.register_node("myroofs:"..color.."_roof", {
+	description = desc.." Roof",
 	drawtype = "mesh",
 	mesh = "twelve-twelve.obj",
-	tiles = {"myroofs_asphalt_shingle_"..color..".png"},
+	tiles = {"myroofs_"..color..".png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
 	sounds = default.node_sound_wood_defaults(),
---	on_place = minetest.rotate_node,
+	on_place = minetest.rotate_node,
 	collision_box = slope_cbox,
 	selection_box = slope_cbox
 })
 
 --Outside Corner
-minetest.register_node("myroofs:asphalt_shingle_"..color.."_ocorner", {
-	description = desc.." Asphalt Shingle Outside Corner",
+minetest.register_node("myroofs:"..color.."_roof_ocorner", {
+	description = desc.." Roof Outside Corner",
 	drawtype = "mesh",
 	mesh = "twelve-twelve-oc.obj",
-	tiles = {"myroofs_asphalt_shingle_"..color..".png"},
+	tiles = {"myroofs_"..color..".png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
 	sounds = default.node_sound_wood_defaults(),
---	on_place = minetest.rotate_node,
+	on_place = minetest.rotate_node,
 	collision_box = ocorner_cbox,
 	selection_box = ocorner_cbox
 })
 
---Inside Corner
-minetest.register_node("myroofs:asphalt_shingle_"..color.."_icorner", {
-	description = desc.." Asphalt Shingle Inside Corner",
+--Inner Corner
+minetest.register_node("myroofs:"..color.."_roof_icorner", {
+	description = desc.." Roof Inside Corner",
 	drawtype = "mesh",
 	mesh = "twelve-twelve-ic.obj",
-	tiles = {"myroofs_asphalt_shingle_"..color..".png"},
+	tiles = {"myroofs_"..color..".png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
 	sounds = default.node_sound_wood_defaults(),
---	on_place = minetest.rotate_node,
+	on_place = minetest.rotate_node,
 	collision_box = icorner_cbox,
 	selection_box = icorner_cbox
 })
-end
-local asphalt_lslope = { --desc, color, img
-	{"Grey", "grey"},
-	{"Dark Grey", "dark_grey"},
-	{"Red", "red"},
-	{"Green", "green"},
-	{"Grey Round", "grey_round"},
-	{"Dark Grey Round", "dark_grey_round"},
-}
-for i in ipairs (asphalt_lslope) do
-	local desc = asphalt_lslope[i][1]
-	local color = asphalt_lslope[i][2]
 
---Long slope
-minetest.register_node("myroofs:asphalt_shingle_"..color.."_long", {
-	description = desc.." Asphalt Shingle Long",
+--Long Slope
+minetest.register_node("myroofs:"..color.."_roof_long", {
+	description = desc.." Roof Long",
 	drawtype = "mesh",
 	mesh = "six-twelve_slope.obj",
-	tiles = {"myroofs_asphalt_shingle_"..color..".png"},
+	tiles = {"myroofs_"..color..".png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
 	sounds = default.node_sound_wood_defaults(),
---	on_place = minetest.rotate_node,
+	on_place = minetest.rotate_node,
 	collision_box = slope_cbox_long,
 	selection_box = slope_cbox_long
 })
 
---Long Inside Corner
-minetest.register_node("myroofs:asphalt_shingle_"..color.."_long_icorner", {
-	description = desc.." Asphalt Shingle Long Inside Corner",
+--Long Inner Corner
+minetest.register_node("myroofs:"..color.."_roof_long_icorner", {
+	description = desc.." Roof Long Inside Corner",
 	drawtype = "mesh",
 	mesh = "six-twelve_slope-ic.obj",
-	tiles = {"myroofs_asphalt_shingle_"..color..".png"},
+	tiles = {"myroofs_"..color..".png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
 	sounds = default.node_sound_wood_defaults(),
---	on_place = minetest.rotate_node,
+	on_place = minetest.rotate_node,
 	collision_box = icorner_cbox_long,
 	selection_box = icorner_cbox_long
 })
 
 --Long Outside Corner
-minetest.register_node("myroofs:asphalt_shingle_"..color.."_long_ocorner", {
-	description = desc.." Asphalt Shingle Long Outside Corner",
+minetest.register_node("myroofs:"..color.."_roof_long_ocorner", {
+	description = desc.." Roof Long Outside Corner",
 	drawtype = "mesh",
 	mesh = "six-twelve_slope-oc.obj",
-	tiles = {"myroofs_asphalt_shingle_"..color..".png"},
+	tiles = {"myroofs_"..color..".png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
 	sounds = default.node_sound_wood_defaults(),
---	on_place = minetest.rotate_node,
+	on_place = minetest.rotate_node,
 	collision_box = ocorner_cbox_long,
 	selection_box = ocorner_cbox_long
 })
 
-end
-
------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 --Crafts
------------------------------------------------------------------------------
-local craft_slope = { --desc, color, img
-	{"Grey", "grey"},
-	{"Dark Grey", "dark_grey"},
-	{"Red", "red"},
-	{"Green", "green"},
---	{"Grey Round", "grey_round"},
---	{"Dark Grey Round", "dark_grey_round"},
-}
-for i in ipairs (craft_slope) do
-	local desc = craft_slope[i][1]
-	local color = craft_slope[i][2]
+------------------------------------------------------------------------------------
 
 --Slope
 minetest.register_craft({
-	output = "myroofs:asphalt_shingle_"..color.." 2",
+	output = "myroofs:"..color.."_roof 6",
 	recipe = {
-		{"", "",""},
-		{"", "","myroofs:asphalt_shingle_"..color.."_bundle"},
-		{"", "myroofs:asphalt_shingle_"..color.."_bundle","myroofs:asphalt_shingle_"..color.."_bundle"},
+		{"","",""},
+		{"","",item},
+		{"",item,item},
 	}
 })
+
+--Outside Corner
+minetest.register_craft({
+	output = "myroofs:"..color.."_roof_ocorner 5",
+	recipe = {
+		{"", "",""},
+		{"",item,""},
+		{"",item,item},
+	}
+})
+
+
 
 --Inside Corner
 minetest.register_craft({
-	output = "myroofs:asphalt_shingle_"..color.."_icorner 3",
+	output = "myroofs:"..color.."_roof_icorner 8",
 	recipe = {
-		{"", "",""},
-		{"myroofs:asphalt_shingle_"..color.."_bundle", "",""},
-		{"myroofs:asphalt_shingle_"..color.."_bundle", "myroofs:asphalt_shingle_"..color.."_bundle",""},
+		{"","",""},
+		{item,"",""},
+		{item,item,""},
 	}
 })
---Outside Corner
-minetest.register_craft({
-	output = "myroofs:asphalt_shingle_"..color.."_ocorner 3",
-	recipe = {
-		{"", "",""},
-		{"", "myroofs:asphalt_shingle_"..color.."_bundle",""},
-		{"", "myroofs:asphalt_shingle_"..color.."_bundle","myroofs:asphalt_shingle_"..color.."_bundle"},
-	}
-})
-end
-
-local craft_lslope = { --desc, color, img
-	{"Grey", "grey"},
-	{"Dark Grey", "dark_grey"},
-	{"Red", "red"},
-	{"Green", "green"},
-	{"Grey Round", "grey_round"},
-	{"Dark Grey Round", "dark_grey_round"},
-}
-for i in ipairs (craft_lslope) do
-	local desc = craft_lslope[i][1]
-	local color = craft_lslope[i][2]
 
 --Long Slope
 minetest.register_craft({
-	output = "myroofs:asphalt_shingle_"..color.."_long 3",
+	output = "myroofs:"..color.."_roof_long 1",
 	recipe = {
 		{"", "",""},
-		{"", "myroofs:asphalt_shingle_"..color.."_bundle","myroofs:asphalt_shingle_"..color.."_bundle"},
-		{"myroofs:asphalt_shingle_"..color.."_bundle", "myroofs:asphalt_shingle_"..color.."_bundle","myroofs:asphalt_shingle_"..color.."_bundle"},
+		{"", item,item},
+		{item, item,item},
 	}
 })
+
 --Long Inside Corner
 minetest.register_craft({
-	output = "myroofs:asphalt_shingle_"..color.."_long_icorner 2",
+	output = "myroofs:"..color.."_roof_long_icorner 1",
 	recipe = {
-		{"", "","myroofs:asphalt_shingle_"..color.."_bundle"},
-		{"", "","myroofs:asphalt_shingle_"..color.."_bundle"},
-		{"myroofs:asphalt_shingle_"..color.."_bundle", "myroofs:asphalt_shingle_"..color.."_bundle","myroofs:asphalt_shingle_"..color.."_bundle"},
+		{"", "",item},
+		{"", "",item},
+		{item, item,item},
 	}
 })
+
 --Long Outside Corner
 minetest.register_craft({
-	output = "myroofs:asphalt_shingle_"..color.."_long_ocorner 2",
+	output = "myroofs:"..color.."_roof_long_ocorner 1",
 	recipe = {
-		{"","myroofs:asphalt_shingle_"..color.."_bundle", ""},
-		{"", "myroofs:asphalt_shingle_"..color.."_bundle", ""},
-		{"myroofs:asphalt_shingle_"..color.."_bundle", "myroofs:asphalt_shingle_"..color.."_bundle","myroofs:asphalt_shingle_"..color.."_bundle"},
+		{"", item,""},
+		{"", item,""},
+		{item, item,item},
 	}
 })
 
 end
+
+
+
+
+
+

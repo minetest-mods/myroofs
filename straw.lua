@@ -99,7 +99,7 @@ minetest.register_node("myroofs:"..color.."_roof", {
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
 	sounds = default.node_sound_wood_defaults(),
-	on_place = minetest.rotate_node,
+--	on_place = minetest.rotate_node,
 	collision_box = slope_cbox,
 	selection_box = slope_cbox
 })
@@ -114,7 +114,7 @@ minetest.register_node("myroofs:"..color.."_roof_ocorner", {
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
 	sounds = default.node_sound_wood_defaults(),
-	on_place = minetest.rotate_node,
+--	on_place = minetest.rotate_node,
 	collision_box = ocorner_cbox,
 	selection_box = ocorner_cbox
 })
@@ -129,7 +129,7 @@ minetest.register_node("myroofs:"..color.."_roof_icorner", {
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
 	sounds = default.node_sound_wood_defaults(),
-	on_place = minetest.rotate_node,
+--	on_place = minetest.rotate_node,
 	collision_box = icorner_cbox,
 	selection_box = icorner_cbox
 })
@@ -144,7 +144,7 @@ minetest.register_node("myroofs:"..color.."_roof_long", {
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
 	sounds = default.node_sound_wood_defaults(),
-	on_place = minetest.rotate_node,
+--	on_place = minetest.rotate_node,
 	collision_box = slope_cbox_long,
 	selection_box = slope_cbox_long
 })
@@ -159,7 +159,7 @@ minetest.register_node("myroofs:"..color.."_roof_long_icorner", {
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
 	sounds = default.node_sound_wood_defaults(),
-	on_place = minetest.rotate_node,
+--	on_place = minetest.rotate_node,
 	collision_box = icorner_cbox_long,
 	selection_box = icorner_cbox_long
 })
@@ -174,7 +174,7 @@ minetest.register_node("myroofs:"..color.."_roof_long_ocorner", {
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=3},
 	sounds = default.node_sound_wood_defaults(),
-	on_place = minetest.rotate_node,
+--	on_place = minetest.rotate_node,
 	collision_box = ocorner_cbox_long,
 	selection_box = ocorner_cbox_long
 })

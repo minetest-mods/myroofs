@@ -19,7 +19,7 @@ minetest.register_node("myroofs:asphalt_shingle_"..color.."_bundle", {
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2},
 	sounds = default.node_sound_wood_defaults(),
---	on_place = minetest.rotate_node,
+	on_place = minetest.rotate_node,
 })
 --Craft
 minetest.register_craft({
@@ -41,7 +41,7 @@ minetest.register_node("myroofs:asphalt_shingle_grey_round_bundle", {
 	paramtype2 = "facedir",
 	groups = {choppy=2, oddly_breakable_by_hand=2},
 	sounds = default.node_sound_wood_defaults(),
---	on_place = minetest.rotate_node,
+	on_place = minetest.rotate_node,
 })
 --Craft
 minetest.register_craft({
