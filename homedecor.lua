@@ -137,7 +137,7 @@ minetest.register_node("myroofs:asphalt_shingle_"..color.."_icorner", {
 })
 end
 local homedecor_lslope = { --desc, color, img
-	{"Dog House", "hd_doghouse", "homedecor_doghouse_roof_top"},
+--	{"Dog House", "hd_doghouse", "homedecor_doghouse_roof_top"},
 	{"Home Decor", "hd_asphalt", "homedecor_shingles_asphalt"},
 	{"Terracotta", "hd_terracotta", "homedecor_shingles_terracotta"},
 	{"Wood", "hd_wood", "homedecor_shingles_wood"},
