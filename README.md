@@ -1,3 +1,9 @@
+# Mod Contributors
+Don
+Max
+ExcaliburZero
+VanessaE (created the models)
+
 # myroofs
 This is a Minetest mod that adds mesh roofing nodes.
 
