@@ -108,3 +108,37 @@ minetest.register_craft({
 		{"", "",""},
 	}
 })
+minetest.register_node("myroofs:copper_roofing", {
+	description = "Copper Roofing",
+	drawtype = "normal",
+	tiles = {"myroofs_copper.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {choppy=2, oddly_breakable_by_hand=2},
+	sounds = default.node_sound_wood_defaults(),
+})
+minetest.register_node("myroofs:green_copper_roofing", {
+	description = "Green Copper Roofing",
+	drawtype = "normal",
+	tiles = {"myroofs_green_copper.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {choppy=2, oddly_breakable_by_hand=2},
+	sounds = default.node_sound_wood_defaults(),
+})
+minetest.register_craft({
+	output = "myroofs:copper_roofing",
+	recipe = {
+		{"default:copper_ingot", "",""},
+		{"default:copper_ingot", "",""},
+		{"default:copper_ingot", "",""},
+	}
+})
+minetest.register_craft({
+	output = "myroofs:green_copper_roofing",
+	recipe = {
+		{"default:copper_ingot", "dye:green",""},
+		{"default:copper_ingot", "",""},
+		{"default:copper_ingot", "",""},
+	}
+})

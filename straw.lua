@@ -84,6 +84,8 @@ local straw_slope = { --desc, color, item
 	{"Straw", "straw", "farming:straw"},
 	{"Dark Straw", "straw_dark", "myroofs:straw_dark"},
 	{"Reet", "reet", "myroofs:reet"},
+	{"Copper", "copper", "myroofs:copper_roofing"},
+	{"Green Copper","green_copper","myroofs:green_copper_roofing"},
 }
 for i in ipairs (straw_slope) do
 	local desc = straw_slope[i][1]
